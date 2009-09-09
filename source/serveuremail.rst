@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 Postfix, le serveur d'email
 ===========================
 
@@ -81,15 +83,10 @@ Pour tester l'envoi d'email vous pouvez utiliser le code suivant dans le termina
 Rediriger les emails envoyer à **root**
 ***************************************
 
-Il est possible que certains logiciels envoient les emails au compte **root** de votre machine. Il seront stockés dans le fichier :file:`/var/mail/root` ce qui n'est pas très pratique pour les lire... Le mieux à faire est de rediriger les emails envoyés à **root** vers votre adresse email. Pour cela éditez le fichier :file:`/etc/aliases`: :command:`nano /etc/aliases` et modifiez la ligne commençant par *root:* pour y mettre votre adresse email. Exemple :
+Il est possible que certains logiciels envoie les emails au compte **root** de votre machine. Il seront stockés dans le fichier :file:`/var/mail/root` ce qui n'est pas très pratique pour les lire... Le mieux à faire est de rediriger les emails envoyés à **root** vers votre adresse email. Pour cela éditez le fichier :file:`/etc/aliases`: :command:`nano /etc/aliases` et modifiez la ligne commençant par *root:* pour y mettre votre adresse email. Exemple :
 
 .. code-block:: bash
 
   root: john@gmail.com
   
 .. warning:: Pour prendre en compte cette modification il vous faut ensuite utiliser la commande :command:`newaliases`. Dans la suite du tutoriel, on configurera les logiciels de monitoring pour qu'ils envoient leurs emails à *root@monserveur*.
-
-.. seealso::
-
-   `Postfix, SMTP, SASL (SSL), TLS, POP3 et IMAP <http://www.alsacreations.com/tuto/lire/614-Serveur-mail-Postfix.html>`_
-      Pour aller plus loin. C'est d'ailleurs le tutoriel qui a servi de base à la rédaction de cette partie.

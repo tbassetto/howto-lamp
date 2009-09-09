@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 Firewall
 ========
 
@@ -11,7 +13,7 @@ Celles-ci portent sur 3 chaînes : INPUT (en entrée), FORWARD (dans le cas d'un
 Arguments utilisés :
 
 * i : interface d'entrée (input)
-* o : interface de sortie (output)
+* i : interface de sortie (output)
 * t : table (par défaut filter contenant les chaînes INPUT, FORWARD, OUTPUT)
 * j : règle à appliquer (Jump)
 * A : ajoute la règle à la fin de la chaîne (Append)
@@ -23,7 +25,7 @@ Arguments utilisés :
 * P : règle par défaut (Policy)
 * lo : localhost (ou 127.0.0.1, machine locale) 
 
-Nous allons créer un script qui sera lancé à chaque démarrage pour mettre en place des règles de base. D'abord créons et remplissions notre fichier : :command:`nano /etc/init.d/firewall`.
+Nous allons créer un script qui sera lancé à chaque démarrage pour mettre en place des règles de base. D'abord créons et remplissions notre fichier : :command:`nano /etc/init.d/firewall`:.
 
 .. code-block:: bash
 
@@ -56,10 +58,10 @@ Nous allons créer un script qui sera lancé à chaque démarrage pour mettre en
 
 	# ---
 
-	# SSH In : vérifiez bien votre port...
+	# SSH In : vérifier bien votre port...
 	iptables -t filter -A INPUT -p tcp --dport 22 -j ACCEPT
 
-	# SSH Out : vérifiez bien votre port...
+	# SSH Out : vérifier bien votre port...
 	iptables -t filter -A OUTPUT -p tcp --dport 22 -j ACCEPT
 
 	# DNS In/Out
@@ -100,9 +102,6 @@ Pour le retirer, vous pouvez utiliser la commande suivante : :command:`update-rc
 Redémarrez, ou exécutez :command:`/etc/init.d/firewall` pour activer le filtrage.
 
 **N'oubliez pas de tester vos règles. Un mauvais choix peut entraîner une indisponibilité de votre serveur ou une perte de contrôle sur celui-ci avec le blocage de votre connexion SSH.**
-
-..todo :: update-rc.d: warning: /etc/init.d/firewall missing LSB information \ update-rc.d: see <http://wiki.debian.org/LSBInitScripts>
-
 
 Fail2ban
 ********
@@ -162,13 +161,6 @@ Vérifiez aussi la configuration de la section *[postfix]* car le fichier par d�
 
 .. note::
 
-	Si vous souhaitez quand même être averti par email, profitez-en pour ne décommentez que la troisième ligne *action* qui permet d'inclure dans l'email la provenance de l'IP et les lignes de log incriminés. N'oubliez pas d'installer l'utilitaire *whois* s'il n'est pas par défaut sur votre système : :command:`apt-get install whois`.
+	Si vous souhaitez quand même être averti par email, profitez-en pour ne décommentez que la troisième ligne *action* qui permet d'inclure dans l'email la provenance de l'IP et les lignes de log incriminés. N'oubliez pas d'installer l'utilitaire *whois* si il n'est pas par défaut sur votre système : :command:`apt-get install whois`.
 
 Après modification de la configuration, n'oubliez pas de redémarrer |fail2ban| : :command:`/etc/init.d/fail2ban restart`.
-
-Protection SYN/ACK
-******************
-
-Pour se protéger des attaques SYN/ACK exécutez la commande : :command:`echo 1 > /proc/sys/net/ipv4/tcp_syncookies`
- 
-.. todo:: Il faut mieux éditer le fichier /etc/sysctl.conf, ça évite de perdre les modifications au redémarrage

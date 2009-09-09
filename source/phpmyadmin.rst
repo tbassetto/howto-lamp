@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 phpMyAdmin
 ==========
 
@@ -6,12 +8,12 @@ Installation
 
 Pour installer phpMyAdmin la commande est : :command:`apt-get install phpmyadmin`.
 
-Configuration & sécurité
+Configuration & Sécurité
 ************************
 
 Dans un premier temps il faut modifier le fichier de configuration qui est :file:`/etc/phpmyadmin/config.inc.php`.
 
-Il est conseillé de changer le type d'authentification de cookie en http :
+il est conseillé de changer le type d'authentification de cookie en http :
 
 .. code-block:: php
 

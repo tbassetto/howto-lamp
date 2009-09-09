@@ -1,12 +1,14 @@
+.. include:: substitutions.inc
+
 MySQL
 =====
 
 Installation
 ************
 
-Pour installer MySQL la commande est : :command:`apt-get install mysql-server mysql-client`.
+Pour installer MySQL la commande est : :command:`apt-get install mysql-server mysql-client libmysqlclient15-dev mysql-common`.
 
-Configuration & sécurité
+Configuration & Sécurité
 ************************
 
 Le fichier de configuration est :file:`/etc/mysql/my.cnf`.

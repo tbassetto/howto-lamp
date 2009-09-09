@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 Monitoring
 ==========
 
@@ -140,4 +142,4 @@ Décommentez aussi les liens suivante dans :file:`/etc/rkhunter.conf` :
 
 Il vous reste à mettre à jour le logiciel : :file:`rkhunter --update`.
 
-Enfin, si vous faites des modifications (mises à jour ou installations) dans les dossiers contrôlés par :command:`rkhunter` il faut exécuter la commande suivante : :file:`rkhunter --propupd`. Elle permet de mettre à jour les tables de :command:`rkhunter` afin qu'il ne vous envoie pas de mail alors que vous avez fait consciemment des modifications.
+Enfin, si vous faites des modifications (mises à jour ou installations) dans les dossiers contrôlés par :command:`rkhunter` il faut exécuter la commande suivante : :command:`rkhunter --propupd`. Elle permet de mettre à jour les tables de :command:`rkhunter` afin qu'il ne vous envoie pas de mail alors que vous avez fait consciemment des modifications.

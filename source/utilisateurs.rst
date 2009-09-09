@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 Gestion des utilisateurs
 ========================
 
@@ -11,7 +13,7 @@ Fichiers et répertoires à connaître
 ************************************
 
 :file:`/etc/passwd`
-  Ce fichier contient la liste des utilisateurs avec leurs caractéristiques, leur mot de passe chiffré et leur shell de connexion.
+  Ce fichier contient la liste des utilisateurs avec leurs caractéristiques, leur mot de passes crypté et leur shell de connexion.
 
 :file:`/etc/group`
   Ce fichier contient la liste des groupes disponibles sur le serveur.
@@ -47,9 +49,9 @@ On va donc commencer par ajouter un groupe **sitesweb**, dans lequel seront tous
 Le problème du shell
 ********************
 
-À moins de vouloir faire un serveur FTP pour distribuer des fichiers (comme *ftp.debian.org* par exemple), vous n'aurez pas besoin d'un logiciel dédié à ce service. Nous allons donc éviter les solutions telles que :program:`proftpd` ou :program:`vsftpd` pour passer par |ssh|, qui est déjà installé sur la machine. Cette solution nous permettra en plus d'utiliser le protocole SFTP au lieu de FTP, qui est plus sûr (les transferts sont chiffrés).
+À moins de vouloir faire un serveur FTP pour distribuer des fichiers (comme *ftp.debian.org* par exemple), vous n'aurez pas besoin d'un logiciel dédié à ce service. Nous allons donc éviter les solutions telles que :program:`proftpd` ou :program:`vsftpd` pour passer par |ssh|, qui est déjà installé sur la machine. Cette solution nous permettra en plus d'utiliser le protocole SFTP au lieu de FTP, qui est plus sûr (les transferts sont cryptés).
 
-Chaque utilisateur que l'on va créer pour les sites Web aura un accès SSH et donc l'accès SFTP. Mais l'accès SSH veut donc dire qu'il a accès à la console et à toutes les commandes disponibles sur le serveur. C'est le cas de notre utilisateur *john* par exemple. Cependant ce n'est pas forcément ce qu'on désire pour nos autres utilisateurs. Pour régler ces ennuis, nous allons installer un *shell* alternatif ne permettant d'utiliser que SFTP et nous allons aussi "chrooter" leur répertoire personnel pour qu'ils ne puissent pas se "balader" au delà.
+Chaque utilisateur que l'on va créer pour les sites Web aura un accès SSH et donc l'accès SFTP. Mais l'accès SSH veut donc dire qu'il a accès à la console et à toutes les commandes disponibles sur le serveur. C'est le cas de notre utilisateur *john* par exemple. Cependant ce n'est pas forcément ce qu'on désire pour nos autres utilisateurs. Pour régler ces ennuis, nous allons installer un *shell* alternatif ne permettant d'utiliser que SFTP et nous allons aussi "chrooté" leur répertoire personnel pour qu'ils ne puissent pas se "balader" au delà.
 
 SFTP et chroot
 **************
@@ -80,7 +82,7 @@ Dans un premier temps le script vous demande le nom de l'utilisateur a créer (*
 
   home directory you wish to set for this user [/home/monsiteweb-fr]
 
-Ici on vous demande le chemin du répertoire personnel de l'utilisateur, il est conseillé de laisser la valeur par défaut.
+Ici on vous demande le chemin du répertoire personnel de l'utilisateur, il est conseillé de laissé la valeur par défaut.
 
 .. code-block:: text
 	
@@ -112,7 +114,7 @@ Pour finir on vous demande d'entrer un mot de passe pour le nouvel utilisateur.
 
 Il faut maintenant activer le bit SUID sur :file:`/usr/sbin/scponlyc` : :command:`chmod +s /usr/sbin/scponlyc`. Cette commande n'est à faire que lors de la création du premier utilisateur ! Pour les autres, il ne sera plus utile de la faire.
 
-Sous |debian4| et |debian5| (aucune idée pour les autres distributions), il y a un bug à corriger : il faut créer un fichier :file:`/dev/null` dans le répertoire personnel :
+Sous Debian Etch 4.0 et Debian Lenny 5.0 (aucune idée pour les autres distributions), il y a un bug à corriger : il faut créer un fichier :file:`/dev/null` dans le répertoire personnel :
 
 .. code-block:: bash
 

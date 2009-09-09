@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 screen
 ======
 
@@ -77,7 +79,7 @@ L'ensemble des commandes sous screen commencent toujours par ``Ctrl+a``. Voici l
 Mode copie
 **********
 
-Une fois que vous avez démarré le mode copie grâce à la commande :kbd:`Ctrl+a [`, il faut définir des délimiteurs entre lesquels le contenu sera copié. Pour cela vous pouvez vous déplacer grâce aux touches :kbd:`h`, :kbd:`j`, :kbd:`k` et :kbd:`l` (représentant les touches directionnelles) mais également grâce à :kbd:`0` ou :kbd:`^` pour aller en début de ligne ou :kbd:`$` pour aller en fin de ligne. Une fois que vous êtes au point de départ de la copie appuyer sur :kbd:`Entrer`, déplacez-vous jusqu'au point de fin de copie puis appuyer sur :kbd:`Entrer`. Un message signale que la copie a été enregistrée. Pour coller il faut utiliser la commande :kbd:`Ctrl+a ]`, elle peut être utilisée dans un autre *screen*.
+Une fois que vous avez démarré le mode copie grâce à la commande :kbd:`Ctrl+a [`, il faut définir des délimiteurs entre lesquels le contenu sera copié. Pour cela vous pouvez vous déplacer grâce aux touches :kbd:`h`, :kbd:`j`, :kbd:`k` et :kbd:`l` (représentant les touches directionnels) mais également grâce à :kbd:`0` ou :kbd:`^` pour aller en début de ligne ou :kbd:`$` pour aller en fin de ligne. Une fois que vous êtes au point de départ de la copie appuyer sur :kbd:`Entrer`, déplacez-vous jusqu'au point de fin de copie puis appuyer sur :kbd:`Entrer`. Un message signale que la copie a été enregistrée. Pour coller il faut utiliser la commande :kbd:`Ctrl+a ]`, elle peut être utilisée dans un autre *screen*.
 
 Fichier de configuration :file:`.screenrc`
 ******************************************

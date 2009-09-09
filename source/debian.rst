@@ -1,23 +1,23 @@
+.. include:: substitutions.inc
+
 Debian, accès root et bases
 ===========================
 
 Passer en mode super-administrateur (root)
 ******************************************
 
-Comme vous devez déjà le savoir ce mode vous permet d'avoir tout les droits sur votre système. Contrairement à Ubuntu (pour ceux qui y sont habitués) où il suffit de rajouter :command:`sudo` devant la commande à exécuter, Debian requiert que l'on se connecte vraiment avec l'utilisateur *root*. Pour faire cela rien de plus simple : utiliser la commande :command:`su -` puis rentrer le mot de passe *root* défini durant l'installation ou fourni par votre prestataire.
+Comme vous devez déjà le savoir ce mode vous permet d'avoir tout les droits sur votre système. Contrairement à Ubuntu (pour ceux qui y sont habitués) où il suffit de rajouter :command:`sudo` devant la commande à exécuter, Debian requiert que l'on se connecte vraiment avec l'utilisateur *root*. Pour faire cela rien de plus simple : utiliser la commande :command:`su` puis rentrer le mot de passe *root* défini durant l'installation ou fourni par votre prestataire.
 
 .. warning::
 
-Ne restez connecté en *root* que le temps de faire vos modifications. Plus longtemps vous utilisez ce compte, plus vous avez de chance de faire une bêtise irréparable ! Pour se déconnecter il suffit de taper la commande :command:`exit`.
+  Attention, ne restez connecté en *root* que le temps de faire vos modifications. Plus longtemps vous utilisez ce compte, plus vous avez de chance de faire une bêtise irréparable ! Pour se déconnecter il suffit de taper la commande :command:`exit`.
 
   Gardez à l'esprit que mis à part les utilisateurs systèmes (on ne se préoccupe pas d'eux, ils sont juste utile pour le fonctionnement de certains programmes), il n'existe pour l'instant que deux utilisateurs sur votre système : le super-administrateur *root* et votre utilisateur par défaut que l'on nommera *john* dans la suite de ce tutoriel.
 
 .. todo:: Il faut expliquer ici ce que signigie les # et $ en début des lignes de commande.
 
-.. todo:: Parler de :command:`sudo` plutôt.
-
-Gestionnaire de paquets : :command:`apt-get`
-********************************************
+Gestionnaire de paquet : :command:`apt-get`
+*******************************************
 
 Sous Debian, le principal logiciel pour gérer les (paquets) logiciels installés se nomme :command:`apt-get`. Il faut l'utiliser connecté en *root*.
 
@@ -62,8 +62,8 @@ Il peut être utile de savoir où sont stockés les fichiers importants :
 :file:`/etc/`
   Contient les fichiers de configurations des logiciels, répartis entre les sous-répertoires.
   
-:file:`/var/log/`
-  Contient les fichiers journaux (logs) des logiciels, répartis entre les sous-répertoires.
+:file:`/var/log`
+  Contient les fichiers de logs des logiciels, répartis entre les sous-répertoires.
 
 .. todo:: Complèter la liste des répertoires importants.
 
@@ -101,8 +101,6 @@ Quelques commandes utiles
 :command:`df` et :command:`du`
   La commande :command:`df` permet de connaître la taux d'utilisation des disques durs, sa syntaxe est la suivante : :command:`du [option]`. L'option :command:`-h` permet de rendre le résultat facilement lisible.
   La commande :command:`du` permet de connaître l'espace pris sur le disque dur par le répertoire courant, sa syntaxe est la suivante : :command:`du [option]`. L'option :command:`-hs` permet de rendre le résultat plus lisible et de faire un résumé.
-  
-.. note:: De manière générale, si vous souhaitez avoir des informations sur une commande utilisez :command:`man`. Cette commande s'utilise de la manière suivante : :command:`man nom_commande_inconnue`.
 	
 .. seealso::
 
@@ -113,4 +111,4 @@ Quelques commandes utiles
       Aide-mémoire assez complet.
 
    `Les astuces les plus intéressantes  <http://www.commandlinefu.com/commands/browse/sort-by-votes>`_
-      Sélection des commandes les plus pratiques.
+      Le meilleur.

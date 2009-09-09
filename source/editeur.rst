@@ -1,3 +1,5 @@
+.. include:: substitutions.inc
+
 nano, l'éditeur de texte
 ========================
 
@@ -32,9 +34,9 @@ Un très bon tutoriel d'initiation à :program:`nano` est disponible sur le Site
 
 .. note::
   
-  :program:`nano` est configurable, il suffit de modifier le fichier :file:`.nanorc`. Pour cela connectez-vous en **root** puis copiez le fichier :file:`/etc/nanorc` dans votre répertoire home : :command:`cp /etc/nanorc /home/votre_pseudo/.nanorc`. Puis changez le propriétaire : :command:`chown votre_pseudo /home/votre_pseudo/.nanorc`.
+  :program:`nano` est configurable, il suffit de modifier le fichier :file:`.nanorc`. Pour cela connectez-vous en **root** puis copiez le fichier :file:`/etc/nanorc` dans votre répertoire home : :command:`cp /etc/nanorc /home/votre_pseudo/nanorc`. Puis changez le propriétaire : :command:`chown votre_pseudo /home/votre_pseudo/.nanorc`.
 
-Les lignes que nous vous conseillons de décommenter sont :
+Les lignes que je préfère décommenter (et donc les options que j'active):
 
 .. code-block:: bash
 

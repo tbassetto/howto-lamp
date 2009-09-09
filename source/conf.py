@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Découvrir Debian pour mettre en place un serveur LAMP complet documentation build configuration file, created by
-# sphinx-quickstart on Thu Jul 23 16:37:19 2009.
+# Serveur LAMP documentation build configuration file, created by
+# sphinx-quickstart on Mon Apr 20 17:57:49 2009.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -22,7 +22,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.todo', 'sphinx.ext.ifconfig']
+extensions = ['sphinx.ext.todo']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -37,9 +37,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Découvrir Debian pour mettre en place un serveur LAMP complet'
-#copyright = u'2009, Thomas Bassetto, Julien Molina'
-copyright = 'Licence CC-BY 2.0'
+project = u'Mettre en place un serveur LAMP efficace'
+copyright = u'2009, Thomas Bassetto, Julien Molina'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -58,14 +57,14 @@ language = 'fr'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%e %B %Y'
+#today_fmt = '%B %d, %Y'
 
 # List of documents that shouldn't be included in the build.
-#unused_docs = []
+unused_docs = ['resttest']
 
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
-exclude_trees = ['_build']
+exclude_trees = []
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -79,7 +78,7 @@ exclude_trees = ['_build']
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
-show_authors = False
+show_authors = True
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -97,17 +96,19 @@ html_theme = 'sphinxdoc'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+#html_theme_options = {
+#	"nosidebar": "true"
+#}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Decouvrir Debian pour mettre en place un serveur LAMP complet'
+#html_title = None
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'Sommaire'
+html_short_title = 'Mettre en place un serveur LAMP efficace'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -125,11 +126,11 @@ html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = '%e %B %Y'
+#html_last_updated_fmt = '%b %d, %Y'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
-# html_use_smartypants = True
+#html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
@@ -139,13 +140,13 @@ html_last_updated_fmt = '%e %B %Y'
 #html_additional_pages = {}
 
 # If false, no module index is generated.
-#html_use_modindex = True
+html_use_modindex = False
 
 # If false, no index is generated.
-#html_use_index = True
+html_use_index = False
 
 # If true, the index is split into individual pages for each letter.
-#html_split_index = False
+html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
 html_show_sourcelink = False
@@ -159,13 +160,13 @@ html_use_opensearch = './'
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Serveur_Lamp_Complet'
+htmlhelp_basename = 'Mettre_en_place_un_serveur_LAMP_efficace'
 
 
 # -- Options for LaTeX output --------------------------------------------------
 
 # The paper size ('letter' or 'a4').
-latex_paper_size = 'a4'
+#latex_paper_size = 'letter'
 
 # The font size ('10pt', '11pt' or '12pt').
 #latex_font_size = '10pt'
@@ -173,8 +174,8 @@ latex_paper_size = 'a4'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Serveur_Lamp_Complet.tex', u'Découvrir Debian pour mettre en place un serveur LAMP complet',
-   u'Thomas Bassetto, Julien Molina', 'howto'),
+  ('index', 'Mettre_en_place_un_serveur_LAMP_efficace.tex', u'Mettre en place un serveur LAMP efficace',
+   u'Thomas Bassetto et Julien Molina', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -187,35 +188,15 @@ latex_documents = [
 
 # Additional stuff for the LaTeX preamble.
 #latex_preamble = ''
+#latex_preamble = '\setcounter{tocdepth}{2}' # Car "the maxdepth option does not apply to the LaTeX writer"
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
 
 # If false, no module index is generated.
-#latex_use_modindex = True
+latex_use_modindex = False
+
 
 # -- Perso -----------------------------------------------------------------------
 
-# Affiche les TODO et la TODOLIST
 todo_include_todos = False
-
-# Highlight code bash par défaut
-highlight_language = 'bash'
-
-# Substitutions générale
-rst_epilog = """
-.. |debian| replace:: :program:`Debian`
-.. |debian4| replace:: :program:`Debian Etch 4.0`
-.. |debian5| replace:: :program:`Debian Lenny 5.0`
-.. |bash| replace:: :program:`Bash`
-.. |screen| replace:: :program:`screen`
-.. |apache| replace:: :program:`Apache`
-.. |php| replace:: :program:`PHP`
-.. |linux| replace:: :program:`Linux`
-.. |ssh| replace:: :program:`SSH`
-.. |fail2ban| replace:: :program:`Fail2ban`
-.. |rkhunter| replace:: :program:`rkhunter`
-.. |monit| replace:: :program:`Monit`
-.. |postfix| replace:: :program:`Postfix`
-.. |destemail| replace:: monemail@fai.fr
-"""

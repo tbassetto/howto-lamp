@@ -8,7 +8,7 @@ Pour installer PHP, la commande est : ``apt-get install libapache2-mod-php5 php5
 
 Vous remarquerez qu'on installe les modules PHP un par un (ici *php5-mysql* seulement). Pour installer l'extension GD (exemple) ``apt-get install php5-gd``.
 
-Configuration & sécurité
+Configuration & Sécurité
 ------------------------
 
 La configuration de PHP est stockée dans le fichier */etc/php5/apache2/php.ini*

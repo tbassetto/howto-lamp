@@ -27,7 +27,9 @@ sites-enabled/
 
 Afin d'activer les modules, utilisez :command:`a2enmod` (Apache 2 Enable Module) suivi du nom du module. Par exemple, activons *mod_rewrite* pour permettre la réécriture des URLs : :command:`a2enmod rewrite`. Afin d'activer un site dont la configuration est stockée dans *sites-available*, utilisez :command:`a2ensite` (Apache 2 Enable Site). Pour désactiver un site, utilisez :command:`a2dissite`. Pour désactiver un module, utilisez :command:`a2dismod`.
 
-Configuration & sécurité
+.. _my-label-de-test:
+
+Configuration & Sécurité
 ------------------------
 
 Le fichier */etc/apache2/ports.conf* fait la liste des ports écoutés par apache, vous pouvez vérifier que vous avez bien les lignes suivantes :
@@ -108,7 +110,7 @@ Créons maintenant le fichier de configuration de notre site : :command:`nano /e
 	    </Directory>
 
 	    ErrorLog /home/monsiteweb-fr/logs/error.monsiteweb-fr.log
-	    CustomLog /home/monsiteweb-fr/logs/access.monsiteweb-fr.log combined
+	    CustomLog /home/monsiteweb-fr/logs/access.monsiteweb.log combined
 	</VirtualHost>
 
 Si on veut rajouter la prise en compte des *.htaccess* (même si ça implique une baisse des performances) il faut rajouter *AllowOverride All*. Pour activer des *Options*, comme la création de la liste de fichiers d'un dossier vide par exemple il faut mettre un + devant : *Options +Indexes*. On remarquera que les logs sont bien créé dans le dossier *logs/* du site web.
