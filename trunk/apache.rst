@@ -105,6 +105,8 @@ Créons maintenant le fichier de configuration de notre site : :command:`nano /e
 	        Allow from all
 	        php_admin_value open_basedir "/home/monsiteweb-fr/www/"
 	        php_admin_value error_log "/home/monsiteweb-fr/logs/error.php.monsiteweb-fr.log"
+          php_admin_value upload_tmp_dir "/home/monsiteweb-fr/tmp/"
+          php_admin_value session.save_path "/home/monsiteweb-fr/sessions/"
 	    </Directory>
 
 	    ErrorLog /home/monsiteweb-fr/logs/error.monsiteweb-fr.log

@@ -68,6 +68,8 @@ echo '<VirtualHost *:80>
                Allow from all
                php_admin_value open_basedir /home/'$NAME'/www/
                php_admin_value error_log /home/'$NAME'/logs/error.php.'$NAME'.log
+               php_admin_value upload_tmp_dir "/home/'$NAME'/tmp/"
+               php_admin_value session.save_path "/home/'$NAME'/sessions/"
        </Directory>
        ErrorLog /home/'$NAME'/logs/error.'$NAME'.log
        CustomLog /home/'$NAME'/logs/access.'$NAME'.log combined
