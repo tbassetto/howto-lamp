@@ -1,4 +1,4 @@
-Rermerciements
+Remerciements
 ==============
 
 * Sébastien Bonnegent, pour la relecture complète et le soutien lors de la première rédaction.
